@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'welcome/home'
+
+  get 'welcome/about'
+
   get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
