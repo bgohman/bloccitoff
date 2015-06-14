@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+newest:
+  name: newestString
+  user: bradley 
+  created_at: <%= 2.seconds.ago %>
+
+oldest:
+  name: oldestString
+  user: bradley
+  created_at: <%= 20.years.ago %>  
+
+zero:
+  name: MyString0
+  user: bradley 
+  created_at: <%= 2.hours.ago %>
+
+one:
+  name: MyString1
+  user: bradley
+  created_at: <%= 10.minutes.ago %>
+
+two:
+  name: MyString2
+  user: bradley
+  created_at: <%= 2.years.ago %>

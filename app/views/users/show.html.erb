@@ -1,7 +1,27 @@
-<% provide(:title, "User profile") %>
-  <h1>User profile</h1>
-
-  <h2><%= @user.name %></h2>
-  <h2><%= @user.email %></h2>
-  <p>
-
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section class="item_form">
+      <%= render 'items/form' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.items.any? %>
+      <h3>To-do Items (<%= @user.items.count %>)</h3>
+      <ol class="items">
+        <% @items. each do |item| %>
+          <% if item.respond_to?(:created_at) %>
+            <%= render partial: 'items/item', locals: {item: item} %>
+          <% end %>
+        <% end %>
+      </ol>
+    <% else %>
+      <h3>You have nothing to do!</h3>
+    <% end %>
+  </div>
+</div>
