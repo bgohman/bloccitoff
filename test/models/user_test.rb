@@ -76,4 +76,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+  test "associated items should be destroyed" do
+    @user.save
+    @user.items.create!(name: "Lorem ipsum")
+    assert_difference 'Item.count', -1 do
+      @user.destroy
+    end
+  end  
+
 end
