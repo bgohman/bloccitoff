@@ -7,25 +7,24 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
-    if @item.save
-      flash[:success] = "A new item has been added to your list!"
-      redirect_to current_user
-    else
-      flash[:error] = "That item could not be added.  Please try again."
-      redirect_to current_user
+    @new_item = Item.new
+    @item.save
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
   def destroy
     @item = Item.find(params[:id])
-    if @item.destroy
-      flash[:success] = "That to-do item has been deleted."
-      redirect_to current_user
-    else 
-      flash[:error] = "That item could not be added.  Please try again."
-      redirect_to current_user  
-    end  
+    @item.destroy 
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
+
 
   private
 

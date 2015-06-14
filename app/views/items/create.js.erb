@@ -1,0 +1,10 @@
+ <% if @item.valid? %>
+   $('.items').append("<%= escape_javascript(render(@item)) %>");
+   $('.js-items-count').html("<%= pluralize(@item.user.items.count, 'To-do Item') %>");
+<%#                                           
+  I can't get this to work to clear the form.  (I used 5 in place of % to keep the comment from closing)
+   $('.item_form').html("<5= escape_javascript(render partial: 'items/form', locals: { item: @new_item }) 5>");
+%>
+<% else %>
+   $('.item_form').html("<%= escape_javascript(render 'items/form') %>");
+ <% end %>
