@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
-    @new_item = Item.new
+    @new_item = current_user.items.build
     @item.save
     respond_to do |format|
       format.html

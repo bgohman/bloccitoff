@@ -7,7 +7,7 @@
       </h1>
     </section>
     <section class="item_form">
-        <%= render 'items/form' %>
+        <%= render partial: 'items/form', locals: { item: @item } %>
     </section>
   </aside>
   <div class="col-md-8">

@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 #fix a routing error releated to 'respond_to'
 gem 'responders', '~>2.0'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug'
