@@ -31,7 +31,7 @@ users = User.all
      user: users.sample,
      name: Faker::Lorem.sentence
    )
-   item.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+   item.update_attributes!(created_at: rand(10.minutes .. 1.week).ago)
  end
 
 puts "Seed finished"
