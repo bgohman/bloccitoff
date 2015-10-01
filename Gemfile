@@ -13,6 +13,7 @@ gem 'bcrypt'
 #fix a routing error releated to 'respond_to'
 gem 'responders', '~>2.0'
 gem 'whenever', :require => false
+gem 'regressor', '~> 0.6.0'
 
 group :development, :test do
   gem 'byebug'
@@ -29,7 +30,6 @@ group :test do
   gem 'minitest-reporters', '1.0.5'
   gem 'mini_backtrace',     '0.1.3'
   gem 'guard-minitest',     '2.3.1'
-  gem 'regressor', '~> 0.6.0'
   gem 'shoulda-matchers'
 end
 

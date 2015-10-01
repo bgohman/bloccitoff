@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe User, regressor: true do
 
   # === Relations ===
-  
-  
+
+
   it { is_expected.to have_many :items }
 
   # === Nested Attributes ===
-  
+
 
   # === Database (Columns) ===
   it { is_expected.to have_db_column :id }
@@ -30,7 +30,7 @@ RSpec.describe User, regressor: true do
   # === Validations (Length) ===
   it { is_expected.to allow_value(Faker::Lorem.characters(65)).for :name }
   it { is_expected.not_to allow_value(Faker::Lorem.characters(66)).for :name }
-  it { is_expected.to allow_value(Faker::Lorem.characters(255)).for :email }
+  it { is_expected.to allow_value(Faker::Lorem.characters(247) + '@bar.com').for :email }
   it { is_expected.not_to allow_value(Faker::Lorem.characters(256)).for :email }
   it { is_expected.to allow_value(Faker::Lorem.characters(72)).for :password }
   it { is_expected.not_to allow_value(Faker::Lorem.characters(73)).for :password }
@@ -43,10 +43,10 @@ RSpec.describe User, regressor: true do
   it { is_expected.to validate_presence_of :password }
 
   # === Validations (Numericality) ===
-  
 
-  
+
+
   # === Enums ===
-  
-  
+
+
 end
