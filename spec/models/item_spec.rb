@@ -11,7 +11,7 @@ RSpec.describe Item, type: :model do
   	  expect(@item.days_left).to eq(7)
   	end
 
-  	it 'returns the number of days left before task deleteion' do
+  	it 'returns the number of days left before task deletion' do
   	  @item.update_attributes(created_at: Time.zone.today - 3.days)
   	  expect(@item.days_left).to eq(4)
   	end
