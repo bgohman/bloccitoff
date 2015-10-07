@@ -2,19 +2,17 @@ require 'rails_helper'
 
 describe "Sign in flow" do
 
-  include TestFactories
-
   describe "successful" do
     it "redirects to the topics index" do
-      user = authenticated_user
+      user = FactoryGirl.create(:user)
       visit root_path
-      within '.user-info' do
-        click_link 'Sign In'
+      within '.navbar-right' do
+        click_link 'Log in'
       end
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
       within 'form' do
-        click_button 'Sign in'
+        click_button 'Log in'
       end
       expect(current_path).to eq root_path
     end
