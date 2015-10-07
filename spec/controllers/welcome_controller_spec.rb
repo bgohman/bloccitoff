@@ -13,8 +13,8 @@ RSpec.describe WelcomeController, type: :controller do
       login_as(@user)
       get 'home'
       expect(response).to render_template(:home)
-      #expect(assigns(:users)).to eq(@user)
-      expect(@item).to be_a_new(Item)
+      #expect(assigns(:user)).to eq(@user)
+      expect(assigns(:item)).to be_a_new(Item)
     end
   end
 

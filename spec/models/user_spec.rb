@@ -75,5 +75,12 @@ RSpec.describe User, type: :model do
   	end
   end
 
+  describe '#remember' do
+    it 'generates a remember token' do
+      @user.remember
+      expect(@user.remember_digest).to be_present
+      expect(@user.remember_digest.length).to eq(60)
+    end
+  end
 
 end
